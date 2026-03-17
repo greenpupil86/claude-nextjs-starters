@@ -6,7 +6,11 @@
       "WebFetch",
       "Bash(npx:*)",
       "Bash(npm run:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "mcp__playwright"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "playwright"
+  ]
 }
