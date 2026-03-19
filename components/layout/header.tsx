@@ -1,23 +1,14 @@
-"use client";
-
 import Link from "next/link";
 import { Logo } from "@/components/ui/logo";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { MobileNav } from "@/components/layout/mobile-nav";
+import { navLinks } from "@/lib/navigation";
 
 /**
- * 헤더 컴포넌트 (클라이언트 컴포넌트)
+ * 헤더 컴포넌트 (서버 컴포넌트)
  * Logo + 데스크톱 네비게이션 + ThemeToggle + MobileNav
  */
 export function Header() {
-  const navLinks = [
-    { label: "홈", href: "/" },
-    { label: "컴포넌트", href: "/components" },
-    { label: "폼 예시", href: "/form-example" },
-    { label: "문서", href: "https://nextjs.org" },
-    { label: "깃허브", href: "https://github.com" },
-  ];
-
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center justify-between">

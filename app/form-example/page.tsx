@@ -18,10 +18,9 @@ import { toast } from "sonner";
 const formSchema = z.object({
   name: z.string().min(2, "이름은 최소 2자 이상이어야 합니다"),
   email: z.string().email("유효한 이메일을 입력해주세요"),
-  age: z.string().refine((val) => {
-    const num = parseInt(val, 10);
-    return !isNaN(num) && num >= 18 && num <= 120;
-  }, "18세 이상 120세 이하여야 합니다"),
+  age: z.number()
+    .min(18, "18세 이상이어야 합니다")
+    .max(120, "120세 이하여야 합니다"),
   website: z
     .string()
     .optional()
@@ -47,7 +46,7 @@ export default function FormExamplePage() {
     defaultValues: {
       name: "",
       email: "",
-      age: "",
+      age: 0,
       website: "",
     },
   });
@@ -136,7 +135,7 @@ export default function FormExamplePage() {
                       id="age"
                       type="number"
                       placeholder="25"
-                      {...register("age")}
+                      {...register("age", { valueAsNumber: true })}
                       aria-invalid={!!errors.age}
                     />
                     {errors.age && (

@@ -10,6 +10,7 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { navLinks } from "@/lib/navigation";
 
 /**
  * 모바일 네비게이션 메뉴 (클라이언트 컴포넌트)
@@ -17,14 +18,6 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
  */
 export function MobileNav() {
   const [open, setOpen] = useState(false);
-
-  const navLinks = [
-    { label: "홈", href: "/" },
-    { label: "컴포넌트", href: "/components" },
-    { label: "폼 예시", href: "/form-example" },
-    { label: "문서", href: "https://nextjs.org" },
-    { label: "깃허브", href: "https://github.com" },
-  ];
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
